@@ -9,13 +9,21 @@ def show
 end
 
 def new
+  @article = Article.new
+end
+
+def edit
+  @article = Article.find(params[:id])
 end
 
 def create
-  @articles = Article.new(params[:article].permit(:title, :text))
+  @article = Article.new(article_params)
 
-  @articles.save
-  redirect_to @articles
+  if @article.save
+   redirect_to @article
+  else
+    render 'new'
+  end
 end
 
 private
@@ -23,6 +31,4 @@ private
   def article_params
     params.require(:article).permit(:title, :text)
   end
-
-
 end
