@@ -21,8 +21,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Devise gem
 gem 'devise'
+# Bootstrap and dependent gems
 gem 'bootstrap', '~> 4.3.1'
+gem "bootstrap_form", "~> 4.0"
 gem 'jquery-rails'
 
 # Use Active Storage variant
