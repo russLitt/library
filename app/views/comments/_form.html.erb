@@ -1,14 +1,12 @@
 <h6>Add a Comment</h6>
-
 <%= bootstrap_form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
   <p>
     <%= form.text_field :commenter %>
   </p>
   <p>
-    <%= form.text_area :body %>  
+    <%= form.text_area :body %>
   </p>
   <p>
     <%= form.submit %>
   </p>
-
 <% end %>

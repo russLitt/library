@@ -1,17 +1,16 @@
 <%= bootstrap_form_with(model: @article, local: true) do |form| %>
-<% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@article.errors.count, "error") %>(s) prohibited this article from being saved:
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %>(s) prohibited this article from being saved:
       </h2>
       <ul>
         <% @article.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-       <% end %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
- <% end %>    
-
+  <% end %>
   <p>
     <%= form.text_field :title %>
   </p>
@@ -21,5 +20,4 @@
   <p>
     <%= form.submit %>
   </p>
-  
 <% end %>

@@ -25,8 +25,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Bootstrap and dependent gems
 gem 'bootstrap', '~> 4.3.1'
-gem "bootstrap_form", "~> 4.0"
+gem 'bootstrap_form', "~> 4.0"
 gem 'jquery-rails'
+
+# ruby format tool
+gem 'rufo'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
