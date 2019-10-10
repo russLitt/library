@@ -10,6 +10,7 @@
       </p>
       <h2>Comments:</h2>
       <br>
+      <% if user_signed_in? %>
       <% @article.comments.each do |comment| %>
       <p>
         <strong>Commenter:</strong>
@@ -24,6 +25,9 @@
             data: { confirm: 'Are you sure?' } %></p>
       <% end %>
       <%= render 'comments/form' %>
+      <% else %>
+      <p>You must be signed in to view and write comments</p>
+      <% end %>
       <%= link_to 'Edit', edit_article_path(@article) %> |
       <%= link_to 'Back', articles_path %>
     </div>
