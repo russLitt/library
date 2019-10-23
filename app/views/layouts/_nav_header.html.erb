@@ -1,22 +1,35 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <%= link_to 'Home', welcome_index_path, :class=> 'navbar-brand' %>
 
-<div style="padding-bottom: 30px; padding-top: 20px;">
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <body>
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <p>
-      <% if user_signed_in? %>
-     <!--  Logged in as <strong><%= current_user.email %></strong>. -->
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-    </p>
-  </body>
-</div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <% if user_signed_in? %>
+            <!--  Logged in as <strong><%= current_user.email %></strong>. -->
+            <li class="nav-item">
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <% else %>
+            <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, :class => 'nav-link' %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</nav>
