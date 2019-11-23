@@ -8,5 +8,5 @@ resources :blogs do
   end
 end
 
-  root 'welcome#index'
+  root 'blogs#index'
 end
