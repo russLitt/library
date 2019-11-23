@@ -5,11 +5,11 @@ def index
 end
 
 def show
-  @article = Article.find(params[:id])
+  @article = Article.find(params[:blog_id, :id])
 end
 
 def new
-  @article = Article.new
+  @article = Article.new(params[:blog_id, :id])
 end
 
 def edit
@@ -46,6 +46,6 @@ end
 private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:blog, :article).permit(:title, :text)
   end
 end
