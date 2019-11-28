@@ -9,7 +9,7 @@ def show
 end
 
 def new
-  @article = Article.new
+  @article = Article.new(params[:id])
 end
 
 def edit
@@ -17,6 +17,7 @@ def edit
 end
 
 def create
+  @blog = Blog.find(params[:blog_id])
   @article = Article.new(article_params)
 
   if @article.save
@@ -46,6 +47,6 @@ end
 private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:blog, :article).permit(:title, :text)
   end
 end
