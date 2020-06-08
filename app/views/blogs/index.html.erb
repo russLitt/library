@@ -1,7 +1,0 @@
-<h1 class="jumbotron">Blog World</h1>
-
-<%= link_to 'Start New Blog', new_blog_path %> 
-
-<% @blogs.each do |blog| %> | 
-<%= link_to blog.title, blog_path(blog) %>
-<% end %>
